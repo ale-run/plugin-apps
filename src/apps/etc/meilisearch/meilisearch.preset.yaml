@@ -1,0 +1,20 @@
+name: meilisearch
+displayName: Meilisearch
+description: Meilisearch is a RESTful search API aiming to be a ready-to-go solution for everyone who wants a fast and relevant search experience for their end-users
+license: MIT
+author: Meilisearch
+homepage: https://www.meilisearch.com/
+apps:
+  - meilisearch
+icon:
+  src: meilisearch.svg
+  background: transparent
+  scale: 1
+  shape: square
+categories:
+  - devtool
+config:
+  - name: meilisearch
+    app: meilisearch@1.6
+
+

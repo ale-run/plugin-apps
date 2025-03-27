@@ -1,0 +1,45 @@
+FROM ghcr.io/ale-run/node:${nodeversion || '20'} AS deps
+
+ENV NODE_ENV=development
+WORKDIR /app
+COPY ./package*.json ./yarn*.lock ./*.html ./
+
+RUN ${npmrc ? ('echo ' + Buffer.from(npmrc, "utf8").toString('base64') + ' | base64 --decode > ~/.npmrc') : 'echo "use npmjs.org registry"'}
+RUN ${npminstall || 'if [ -f "./yarn.lock" ]; then yarn install;  elif [ -f "./package-lock.json" ]; then npm ci | npm i; elif [ -f "./package.json" ]; then npm i; fi'}
+
+# builder
+FROM ghcr.io/ale-run/node:${nodeversion || '20'} AS build
+  
+ENV NODE_ENV=development
+WORKDIR /app
+
+${buildenv || ''}
+
+COPY ./ ./
+COPY --from=deps /app/ ./
+
+RUN ${npmbuild || 'if [ -f "./yarn.lock" ]; then yarn build | npm run build --if-present; elif [ -f "./package-lock.json" ]; then npm run build --if-present; fi'}
+
+# jekyll build
+FROM jekyll/builder:${app.version || '4'} AS jekyll
+
+WORKDIR /srv/jekyll
+ENV JEKYLL_ENV=production
+
+COPY --from=build --chown=jekyll:jekyll /app ./
+RUN ${build || 'jekyll build'} && cp -rf ./${docbase || '_site'} /app
+
+RUN chown -Rf root:root /srv/jekyll
+
+# httpd
+FROM nginx:1.20-alpine AS httpd
+LABEL org.opencontainers.image.source ${git.url}
+
+RUN apk add --no-cache libc6-compat coreutils
+
+WORKDIR /app
+COPY --from=jekyll /app /var/www/html
+
+RUN rm -f /var/www/html/Dockerfile*
+
+RUN echo "${Buffer.from(nginxconf, 'utf8').toString('base64')}" | base64 --decode > /etc/nginx/nginx.conf

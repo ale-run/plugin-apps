@@ -1,0 +1,33 @@
+name: kafka-ui
+displayName: Kafka UI
+description: UI for Apache Kafka is a versatile, fast, and lightweight web UI for managing Apache Kafka® clusters. Built by developers, for developers.
+license: Apache 2.0
+author: CloudHut
+homepage: https://docs.kafka-ui.provectus.io/
+apps:
+  - kafka-ui
+icon:
+  src: kafka-ui.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - monitoring
+config:
+  - name: kafka-ui
+    app: kafka-ui
+    options:
+      config: |
+        auth:
+          type: DISABLED
+        kafka:
+          clusters:
+          - bootstrapServers: kafka-0:9092
+            name: test
+            properties: {}
+            readOnly: false
+        rbac:
+          roles: []
+        webclient: {}
+
+

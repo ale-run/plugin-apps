@@ -1,0 +1,20 @@
+name: mongo-express
+displayName: Mongo Express
+description: Web-based MongoDB admin interface, written with Node.js and express.
+main: lib/mongo-express.js
+license: MIT
+author: Nick Cox
+homepage: https://github.com/mongo-express/mongo-express-docker
+apps:
+  - mongo-express
+icon:
+  src: mongo-express.svg
+  background: transparent
+  scale: 0.8
+  shape: square
+categories:
+  - devtool
+config:
+  - name: mongo-express
+    app: mongo-express
+

@@ -1,0 +1,80 @@
+name: mongo-express
+displayName: Mongo Express
+description: Web-based MongoDB admin interface, written with Node.js and express.
+license: MIT
+author: Nick Cox
+homepage: https://github.com/mongo-express/mongo-express-docker
+main: lib/mongo-express.js
+versions:
+  - '1'
+icon:
+  src: mongo-express.svg
+  scale: 0.7
+categories:
+  - database
+  - nosql
+  - development
+  - devtool
+information:
+  packager: ale
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    dbhost:
+      title: Database Server Host
+      type: string
+      maxLength: 100
+      attrs:
+        type: text
+        placeholder: Database Server Host
+    dbport:
+      title: Database Server Port
+      type: string
+      maxLength: 40
+      default: '27017'
+      attrs:
+        type: text
+        placeholder: Database Server Port
+    dbadminusername:
+      title: Database Admin Username
+      type: string
+      maxLength: 40
+      attrs:
+        type: text
+        placeholder: Database Admin Username
+    dbadminpassword:
+      title: Database Admin Password
+      type: string
+      maxLength: 40
+      attrs:
+        type: password
+        placeholder: Database Admin Password
+    expressusername:
+      title: Mongo Express Username
+      type: string
+      maxLength: 40
+      attrs:
+        type: text
+        placeholder: Mongo Express Username(optional)
+    expresspassword:
+      title: Mongo Express Password
+      type: string
+      maxLength: 40
+      attrs:
+        type: password
+        placeholder: Mongo Express Password(optional)
+  required:
+    - dbhost
+    - dbport
+    - dbadminusername
+    - dbadminpassword

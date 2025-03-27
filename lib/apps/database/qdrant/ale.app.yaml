@@ -1,0 +1,42 @@
+name: qdrant
+displayName: Qdrant
+description: Qdrant is a vector similarity search engine.
+license: Apache 2.0
+author: Qdrant
+homepage: https://qdrant.tech/
+main: lib/qdrant.js
+versions:
+  - '1.13'
+  - '1.12'
+icon:
+  src: qdrant.svg
+  background: transparent
+  scale: 0.9
+  shape: square
+categories:
+  - database
+  - development
+information:
+  packager: ale
+related:
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    tz:
+      title: Timezone
+      type: string
+      maxLength: 20
+      attrs:
+        type: timezone
+        placeholder: Timezone
+  required:

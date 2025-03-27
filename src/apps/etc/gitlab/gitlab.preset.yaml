@@ -1,0 +1,20 @@
+name: gitlab
+displayName: GitLab
+description: GitLab Inc. is an open-core company that operates GitLab, a DevOps software package which can develop, secure, and operate software.
+main: lib/gitlab.js
+license: MIT
+author: GitLab B.V.
+homepage: https://about.gitlab.com/
+apps:
+  - gitlab
+icon:
+  src: gitlab.svg
+  background: transparent
+  scale: 0.9
+  shape: square
+categories:
+  - devtool
+config:
+  - name: gitlab
+    app: gitlab
+

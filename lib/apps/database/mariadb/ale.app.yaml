@@ -1,0 +1,105 @@
+name: mariadb
+displayName: MariaDB
+description: MariaDB is a community-developed fork of MySQL intended to remain free under the GNU GPL.
+license: GPL
+author: MariaDB Foundation
+homepage: https://mariadb.org/
+main: lib/mariadb.js
+versions:
+  - '11.2'
+  - '11.1'
+  - '11.0'
+  - '10.11'
+  - '10.10'
+  - '10.9'
+  - '10.8'
+  - '10.7'
+  - '10.6'
+  - '10.5'
+  - '10.4'
+  - '10.3'
+  - '10.2'
+  - '10.1'
+icon:
+  src: mariadb.svg
+  scale: 0.8
+  shape: circle
+categories:
+  - database
+  - rdbms
+  - sql
+  - development
+information:
+  packager: ale.run
+related:
+  - postgresql
+  - mongo
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    rootpassword:
+      title: Root Password
+      type: string
+      maxLength: 20
+      attrs:
+        type: password
+        placeholder: Root Password
+        secret: ${name}-root-password
+        message: If no password is specified, it will be automatically generated.
+        immutable: true
+    database:
+      title: Database Name
+      type: string
+      maxLength: 20
+      attrs:
+        placeholder: Database Name
+        immutable: true
+    username:
+      title: Username
+      type: string
+      maxLength: 20
+      attrs:
+        placeholder: Username
+        immutable: true
+    password:
+      title: Password
+      type: string
+      maxLength: 20
+      attrs:
+        type: password
+        placeholder: Password
+        secret: ${name}-user-password
+        immutable: true
+    config:
+      title: Config (my.cnf)
+      type: string
+      attrs:
+        type: textarea
+        rows: 10
+        placeholder: my.cnf
+    # safemode:
+    #   title: Use safe mode
+    #   type: boolean
+    #   default: false
+    #   attrs:
+    #     type: switch
+    #     placeholder: Boolean
+    tz:
+      title: Timezone
+      type: string
+      maxLength: 20
+      attrs:
+        type: timezone
+        placeholder: Timezone
+  required:
+    - rootpassword

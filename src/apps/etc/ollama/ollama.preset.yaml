@@ -1,0 +1,24 @@
+name: ollama
+displayName: Ollama
+description: Ollama
+license: MIT
+author: Ollama
+homepage: https://flowiseai.com/
+apps:
+  - ollama
+icon:
+  src: ollama.svg
+  background: transparent
+  scale: 1
+  shape: square
+categories:
+  - devtool
+  - ai
+  - llm
+  - gpt
+  - langchain
+config:
+  - name: ollama
+    app: ollama
+
+

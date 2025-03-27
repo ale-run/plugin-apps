@@ -1,0 +1,21 @@
+name: ghost
+displayName: Ghost
+license: MIT
+author: Ghost Foundation
+homepage: https://ghost.org/
+apps:
+  - ghost
+icon:
+  src: ghost.svg
+  background: rgb(51, 51, 51)
+  forground: "#fff"
+  scale: 0.4
+  shape: circle
+categories:
+  - blog
+  - cms
+config:
+  - name: ghost
+    app: ghost
+
+

@@ -1,0 +1,14 @@
+name: mariadb
+displayName: MariaDB
+description: MariaDB는 GNU GPL로 제공되는 MySQL 호환 관계형 데이터베이스입니다.
+license: GPL
+author: MariaDB Foundation
+homepage: https://mariadb.org/
+apps:
+  - mariadb
+categories:
+  - database
+config:
+  - name: mariadb
+    app: mariadb
+

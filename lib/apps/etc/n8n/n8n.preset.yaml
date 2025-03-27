@@ -1,0 +1,20 @@
+name: n8n-ce
+displayName: n8n
+description: n8n is an workflow automation tool for technical people
+license: Fair Code License
+author: n8n
+homepage: https://n8n.io/
+apps:
+  - n8n
+icon:
+  src: n8n.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - monitoring
+config:
+  - name: n8n
+    app: n8n@1.27
+
+

@@ -1,0 +1,51 @@
+name: ollama
+displayName: Ollama
+description: Ollama
+license: MIT
+author: Ollama
+homepage: https://ollama.com/
+main: lib/ollama.js
+versions:
+  - '0.6'
+  - '0.5'
+icon:
+  src: ollama.svg
+  background: transparent
+  scale: 1
+  shape: square
+categories:
+  - devtool
+  - ai
+  - llm
+  - gpt
+  - langchain
+information:
+  packager: ale
+dependencies:
+related:
+resources:
+  cpu:
+    min: 2
+    initial: 2
+  memory:
+    min: 8.0
+    initial: 8.0
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env

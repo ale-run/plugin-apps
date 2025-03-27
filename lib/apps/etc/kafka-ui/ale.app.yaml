@@ -1,0 +1,58 @@
+name: kafka-ui
+displayName: Kafka UI
+description: UI for Apache Kafka is a versatile, fast, and lightweight web UI for managing Apache Kafka® clusters. Built by developers, for developers.
+license: Apache 2.0
+author: CloudHut
+homepage: https://docs.kafka-ui.provectus.io/
+main: lib/kafka-ui.js
+versions:
+  - '0.7'
+icon:
+  src: kafka-ui.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - monitoring
+information:
+  packager: ale
+dependencies:
+related:
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+  replicas:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    config:
+      title: Config (dynamic_config.yaml)
+      type: string
+      attrs:
+        type: textarea
+        rows: 10
+        placeholder: dynamic_config.yaml
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+  required:
+    - config

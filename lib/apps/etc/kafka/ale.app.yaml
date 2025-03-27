@@ -1,0 +1,66 @@
+name: kafka
+displayName: Kafka
+description: Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
+main: lib/kafka.js
+license: Apache-2.0
+author: Apache Software Foundation
+homepage: https://kafka.apache.org/
+versions:
+  - '3.7'
+icon:
+  src: kafka.svg
+  background: '#fff'
+  scale: 1
+  shape: square
+categories:
+  - message
+  - kafka
+  - queue
+  - devtool
+information:
+  packager: ale
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 1
+    initial: 1
+  disk:
+    min: 1
+    initial: 1
+  replicas:
+    min: 1
+    max: 5
+    initial: 1
+    values: [1, 3, 5]
+schema:
+  type: object
+  properties:
+    clusterid:
+      title: Cluster ID
+      type: string
+      maxLength: 50
+      attrs:
+        placeholder: Cluster ID
+    autocreatetopics:
+      title: Auto Create Topics
+      type: boolean
+      default: true
+      attrs:
+        type: switch
+        placeholder: Auto Create Topics
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+  required:

@@ -1,0 +1,19 @@
+name: redis
+displayName: Redis
+description: Redis는 데이터 구조 서버로 작동하는 오픈소스 키-값 저장소입니다.
+license: BSD
+author: Redis Labs
+homepage: https://redis.io/
+apps:
+  - redis
+icon:
+  src: redis.svg
+  scale: 0.7
+  background: "#343434"
+  shape: circle
+categories:
+  - database
+config:
+  - name: redis
+    app: redis
+

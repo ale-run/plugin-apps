@@ -1,0 +1,80 @@
+name: influxdb
+displayName: InfluxDB
+description: InfluxDB is an open-source time series database (TSDB) developed by the company InfluxData.
+license: MIT
+author: InfluxData Inc.
+homepage: https://www.influxdata.com/
+main: lib/influxdb.js
+versions:
+  - '2.7'
+icon:
+  src: influxdb.svg
+  scale: 0.7
+categories:
+  - database
+  - nosql
+  - development
+information:
+  packager: ale
+related:
+  - node
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    adminusername:
+      title: Admin Username
+      type: string
+      default: admin
+      maxLength: 40
+      attrs:
+        type: text
+        placeholder: Admin Username
+        immutable: true
+    adminpassword:
+      title: Admin Password
+      type: string
+      maxLength: 40
+      attrs:
+        type: password
+        placeholder: Admin Password
+        secret: ${name}-admin-password
+        message: If no password is specified, it will be automatically generated.
+        immutable: true
+    initialorg:
+      title: Initial Organization
+      type: string
+      maxLength: 40
+      attrs:
+        type: text
+        placeholder: Initial Organization
+        immutable: true
+    initialbucket:
+      title: Initial Bucket
+      type: string
+      maxLength: 40
+      attrs:
+        type: text
+        placeholder: Initial Bucket
+        immutable: true
+    tz:
+      title: Timezone
+      type: string
+      maxLength: 20
+      attrs:
+        type: timezone
+        placeholder: Timezone
+  required:
+    - adminusername
+    - adminpassword
+    - initialorg
+    - initialbucket

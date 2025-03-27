@@ -1,0 +1,83 @@
+name: bookstack
+displayName: BookStack
+author: Dan Brown and the BookStack Project contributors
+homepage: https://www.bookstackapp.com/
+main: lib/bookstack.js
+versions:
+  - '23'
+icon:
+  src: bookstack.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - wiki
+information:
+  packager: ale
+dependencies:
+related:
+  - mariadb
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+    dbhost:
+      title: Database Host
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Host
+    dbport:
+      title: Database Port
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Port
+    dbusername:
+      title: Database Username
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Username
+    dbpassword:
+      title: Database Password
+      type: string
+      maxLength: 255
+      attrs:
+        type: password
+        placeholder: Database Password
+        secret: ${request.name}-db-password
+    database:
+      title: Database Name
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Name
+  required:
+    - dbhost
+    - dbport
+    - dbusername
+    - dbpassword
+    - database

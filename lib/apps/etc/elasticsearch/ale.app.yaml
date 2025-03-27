@@ -1,0 +1,56 @@
+name: elasticsearch
+displayName: Elasticsearch
+description: Elasticsearch is a powerful open source search and analytics engine that makes data easy to explore.
+main: lib/elasticsearch.js
+license: Apache-2.0
+author: Elastic NV
+homepage: https://www.elastic.co/
+versions:
+  - '7'
+icon:
+  src: elasticsearch.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - elastic
+  - elasticsearch
+  - searchengine
+  - devtool
+information:
+  packager: ale
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 2
+    initial: 2
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    config:
+      title: Config (elasticsearch.yml)
+      type: string
+      attrs:
+        type: textarea
+        rows: 10
+        placeholder: elasticsearch.yml
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+  required:
+    - config

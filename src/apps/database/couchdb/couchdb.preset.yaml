@@ -1,0 +1,17 @@
+name: couchdb
+displayName: CouchDB
+description: CouchDB is a Seamless multi-master syncing database with an intuitive HTTP/JSON API, designed for reliability.
+license: Apache 2.0
+author: The Apache Software Foundation
+homepage: https://couchdb.apache.org/
+apps:
+  - couchdb
+icon:
+  src: couchdb.svg
+  scale: 0.7
+categories:
+  - database
+config:
+  - name: couchdb
+    app: couchdb@3
+

@@ -1,0 +1,24 @@
+name: localai
+displayName: LocalAI
+description: LocalAI
+license: MIT
+author: Ettore Di Giacinto
+homepage: https://localai.io/
+apps:
+  - localai
+icon:
+  src: localai.png
+  background: transparent
+  scale: 1
+  shape: square
+categories:
+  - devtool
+  - ai
+  - llm
+  - gpt
+  - langchain
+config:
+  - name: localai
+    app: localai
+
+

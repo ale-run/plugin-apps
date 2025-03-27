@@ -1,0 +1,83 @@
+name: postgresql
+displayName: PostgreSQL
+description: The PostgreSQL object-relational database system provides reliability and data integrity.
+license: MIT
+author: The PostgreSQL Global Development Group
+homepage: https://www.postgresql.org/
+main: lib/postgresql.js
+versions:
+  - '17'
+  - '16'
+  - '15'
+  - '14'
+  - '13'
+  - '12'
+  - '11'
+  - '10'
+  - '9'
+icon:
+  src: postgresql.svg
+  scale: 0.7
+categories:
+  - database
+  - rdbms
+  - sql
+  - development
+information:
+  packager: ale.run
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    rootusername:
+      title: Root Username
+      type: string
+      maxLength: 20
+      default: root
+      attrs:
+        type: text
+        placeholder: Root Username
+        immutable: true
+    rootpassword:
+      title: Root Password
+      type: string
+      maxLength: 40
+      attrs:
+        type: password
+        placeholder: Root Password
+        message: If no password is specified, it will be automatically generated.
+        immutable: true
+    database:
+      title: Database Name
+      type: string
+      maxLength: 40
+      attrs:
+        type: text
+        placeholder: Database Name
+        immutable: true
+    config:
+      title: Config (postgresql.conf)
+      type: string
+      attrs:
+        type: textarea
+        rows: 10
+        placeholder: postgresql.conf
+    tz:
+      title: Timezone
+      type: string
+      maxLength: 20
+      attrs:
+        type: timezone
+        placeholder: Timezone
+  required:
+    - rootusername
+    - rootpassword

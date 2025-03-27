@@ -1,0 +1,90 @@
+name: redis
+displayName: Redis
+description: Redis is an open source key-value store that functions as a data structure server.
+license: BSD
+author: Redis Labs
+homepage: https://redis.io/
+main: lib/redis.js
+versions:
+  - '7'
+  - '6'
+  - '5'
+icon:
+  src: redis.svg
+  scale: 0.7
+  background: '#343434'
+  shape: circle
+categories:
+  - database
+  - cache
+  - nosql
+information:
+  packager: ale.run
+  boxBackground: '#3a3a3a'
+  boxForeground: '#fff'
+related:
+  - node
+  - python
+  - java
+  - golang
+  - kotlin
+  - ruby
+  - php
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    auth:
+      title: Use authentication
+      type: boolean
+      default: false
+      attrs:
+        type: switch
+        placeholder: Use authentication
+    password:
+      title: Password
+      type: string
+      maxLength: 20
+      attrs:
+        type: password
+        placeholder: Password
+        secret: ${name}-password
+    disable_flushdb:
+      title: Disable FLUSHDB command
+      type: boolean
+      default: false
+      attrs:
+        type: checkbox
+        placeholder: Disable FLUSHDB command
+    disable_flushall:
+      title: Disable FLUSHALL command
+      type: boolean
+      default: false
+      attrs:
+        type: checkbox
+        placeholder: Disable FLUSHALL command
+    disable_config:
+      title: Disable CONFIG command
+      type: boolean
+      default: false
+      attrs:
+        type: checkbox
+        placeholder: Disable CONFIG command
+    aof:
+      title: AOF (Append Only File) persistence
+      type: boolean
+      default: false
+      attrs:
+        type: checkbox
+        placeholder: AOF (Append Only File) persistence
+  required:
+    - auth

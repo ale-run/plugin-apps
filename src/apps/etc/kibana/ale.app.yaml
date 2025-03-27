@@ -1,0 +1,59 @@
+name: kibana
+displayName: Kibana
+description: Kibana is your window into the Elastic Stack. Specifically, it's a browser-based analytics and search dashboard for Elasticsearch.
+main: lib/kibana.js
+license: Apache-2.0
+author: Elastic NV
+homepage: https://www.elastic.co/
+versions:
+  - '7'
+  - '6'
+icon:
+  src: kibana.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - elastic
+  - kibana
+  - devtool
+information:
+  packager: ale
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 1
+    initial: 1
+  disk:
+    min: 1
+    initial: 1
+  replicas:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    config:
+      title: Config (kibana.yml)
+      type: string
+      attrs:
+        type: textarea
+        rows: 10
+        placeholder: kibana.yml
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+  required:
+    - config

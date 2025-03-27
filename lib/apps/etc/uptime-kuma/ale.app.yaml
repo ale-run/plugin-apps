@@ -1,0 +1,47 @@
+name: uptime-kuma
+displayName: Uptime Kuma
+description: Uptime Kuma is a self-hosted monitoring tool.
+license: MIT
+author: Louis Lam
+homepage: https://uptime.kuma.pet/
+main: lib/uptime-kuma.js
+versions:
+  - '1'
+icon:
+  src: uptime-kuma.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - monitoring
+information:
+  packager: ale
+dependencies:
+related:
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+  required:

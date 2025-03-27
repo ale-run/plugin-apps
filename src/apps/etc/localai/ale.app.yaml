@@ -1,0 +1,49 @@
+name: localai
+displayName: LocalAI
+description: LocalAI
+license: MIT
+author: Ettore Di Giacinto
+homepage: https://localai.io/
+main: lib/localai.js
+versions:
+icon:
+  src: localai.png
+  background: transparent
+  scale: 1
+  shape: square
+categories:
+  - devtool
+  - ai
+  - llm
+  - gpt
+  - langchain
+information:
+  packager: ale
+dependencies:
+related:
+resources:
+  cpu:
+    min: 2
+    initial: 2
+  memory:
+    min: 8.0
+    initial: 8.0
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env

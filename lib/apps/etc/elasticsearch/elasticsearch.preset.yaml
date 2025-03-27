@@ -1,0 +1,20 @@
+name: elasticsearch
+displayName: Elasticsearch
+description: Elasticsearch는 데이터를 쉽게 탐색할 수 있도록 해주는 강력한 오픈소스 검색 및 분석 엔진입니다.
+license: Apache-2.0
+author: Elastic NV
+homepage: https://www.elastic.co/
+apps:
+  - elasticsearch
+icon:
+  src: elasticsearch.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - searchengine
+  - devtool
+config:
+  - name: elasticsearch
+    app: elasticsearch
+

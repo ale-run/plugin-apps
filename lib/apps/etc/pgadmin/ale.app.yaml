@@ -1,0 +1,54 @@
+name: pgadmin
+displayName: pgAdmin
+description: pgAdmin 4 is a web based administration tool for the PostgreSQL database.
+license: PostgreSQL
+author: The pgAdmin Development Team
+homepage: https://www.pgadmin.org/
+main: lib/pgadmin.js
+versions:
+  - '9'
+icon:
+  src: pgadmin.svg
+  scale: 0.7
+categories:
+  - database
+  - rdbms
+  - sql
+  - development
+  - devtool
+information:
+  packager: ale
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+schema:
+  type: object
+  properties:
+    adminemail:
+      title: pgAdmin Admin Email
+      type: string
+      maxLength: 100
+      attrs:
+        type: text
+        placeholder: pgAdmin Admin Email
+    adminpassword:
+      title: pgAdmin Admin Password
+      type: string
+      maxLength: 40
+      attrs:
+        type: password
+        placeholder: pgAdmin Admin Password
+    tz:
+      title: Timezone
+      type: string
+      maxLength: 20
+      attrs:
+        type: timezone
+        placeholder: Timezone
+  required:
+    - adminemail
+    - adminpassword

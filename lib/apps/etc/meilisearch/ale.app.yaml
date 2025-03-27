@@ -1,0 +1,47 @@
+name: meilisearch
+displayName: Meilisearch
+description: Meilisearch is a RESTful search API aiming to be a ready-to-go solution for everyone who wants a fast and relevant search experience for their end-users
+license: MIT
+author: Meilisearch
+homepage: https://www.meilisearch.com/
+main: lib/meilisearch.js
+versions:
+  - '1.13'
+icon:
+  src: meilisearch.svg
+  background: transparent
+  scale: 1
+  shape: square
+categories:
+  - devtool
+information:
+  packager: ale
+dependencies:
+related:
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+  required:

@@ -1,0 +1,24 @@
+name: jekyll
+displayName: Jekyll
+author: cloudtype
+license: MIT
+apps:
+  - jekyll
+icon:
+  src: jekyll.svg
+  background: transparent
+  scale: 0.8
+  shape: square
+categories:
+  - frontend
+  - jekyll
+  - blog
+  - cms
+repository:
+  branch: master
+  url: https://github.com/cloudtype/example-jekyll.git
+config:
+  - name: jekyll
+    app: jekyll
+    options: {}
+

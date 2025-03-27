@@ -1,0 +1,79 @@
+name: phpmyadmin
+displayName: phpMyAdmin
+description: phpMyAdmin is a web interface for MySQL and MariaDB.
+license: GPL 2.0
+author: Free Software Foundation, Inc.
+homepage: https://www.phpmyadmin.net/
+main: lib/phpmyadmin.js
+versions:
+icon:
+  src: phpmyadmin.svg
+  scale: 0.7
+categories:
+  - database
+  - rdbms
+  - sql
+  - development
+  - devtool
+information:
+  packager: ale
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    dbhost:
+      title: Database Server Host
+      type: string
+      maxLength: 100
+      attrs:
+        type: text
+        placeholder: Database Server Host
+    dbport:
+      title: Database Server Port
+      type: string
+      maxLength: 40
+      default: '3306'
+      attrs:
+        type: text
+        placeholder: Database Server Port
+    rootpassword:
+      title: Root Password
+      type: string
+      maxLength: 40
+      attrs:
+        type: password
+        placeholder: Root Password
+    username:
+      title: Normal User Username
+      type: string
+      maxLength: 20
+      attrs:
+        type: text
+        placeholder: Normal User Username(optional)
+    userpassword:
+      title: Normal User Password
+      type: string
+      maxLength: 40
+      attrs:
+        type: password
+        placeholder: Normal User Password(optional)
+    tz:
+      title: Timezone
+      type: string
+      maxLength: 20
+      attrs:
+        type: timezone
+        placeholder: Timezone
+  required:
+    - rootpassword
+    - dbhost
+    - dbport

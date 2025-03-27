@@ -1,0 +1,28 @@
+name: redirector
+displayName: Redirector
+description: Redirector
+main: lib/redirector.js
+license: MIT
+icon:
+  src: redirector.svg
+  background: '#000000'
+  scale: 0.7
+  shape: circle
+categories:
+  - web
+  - nginx
+  - redirection
+  - development
+  - devtool
+information:
+  packager: ale
+schema:
+  type: object
+  properties:
+    redirect:
+      title: Redirect URL
+      type: string
+      attrs:
+        placeholder: Redirect URL
+  required:
+    - redirect

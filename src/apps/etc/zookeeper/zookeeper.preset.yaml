@@ -1,0 +1,22 @@
+name: zookeeper
+displayName: Zookeeper
+description: ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
+license: Apache 2.0
+author: The Apache Software Foundation
+homepage: https://zookeeper.apache.org/
+apps:
+  - zookeeper
+icon:
+  src: zookeeper.svg
+  background: transparent
+  scale: 0.9
+  shape: square
+categories:
+  - message
+  - queue
+  - devtool
+config:
+  - name: zookeeper
+    app: zookeeper@3.9
+
+

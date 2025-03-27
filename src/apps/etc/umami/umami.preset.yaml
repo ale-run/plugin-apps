@@ -1,0 +1,20 @@
+name: umami
+displayName: Umami
+description: Umami is an open-source, self-hosted web analytics solution.
+license: MIT
+author: Umami Software, Inc.
+homepage: https://umami.is/
+apps:
+  - umami
+icon:
+  src: umami.svg
+  background: '#fff'
+  scale: 0.9
+  shape: circle
+categories:
+  - analytics
+config:
+  - name: umami
+    app: umami@2.7
+
+

@@ -1,0 +1,126 @@
+name: flowise
+displayName: Flowise
+description: Flowise is a low-code/no-code drag & drop tool with the aim to make it easy for people to visualize and build LLM apps.
+license: Apache 2.0
+author: FlowiseAI
+homepage: https://flowiseai.com/
+main: lib/flowise.js
+versions:
+  - '2.2'
+  - '2.1'
+  - '2.0'
+  - '1.8'
+  - '1.7'
+  - '1.6'
+  - '1.5'
+  - '1.4'
+icon:
+  src: flowise.svg
+  background: transparent
+  scale: 1
+  shape: square
+categories:
+  - devtool
+  - ai
+  - llm
+  - gpt
+  - langchain
+information:
+  packager: ale
+dependencies:
+related:
+  - mariadb
+  - postgresql
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+    dbtype:
+      title: Database
+      type: string
+      default: embedded
+      enum:
+        - embedded
+        - postgres
+        - mysql
+      attrs:
+        placeholder: Select database type
+        labels:
+          - Embedded
+          - PostgreSQL
+          - MySQL/MariaDB
+    dbhost:
+      title: Database Host
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Host
+        if: 'dbtype !== "embedded"'
+    dbport:
+      title: Database Port
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Port
+        if: 'dbtype !== "embedded"'
+    dbusername:
+      title: Database Username
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Username
+        if: 'dbtype !== "embedded"'
+    dbpassword:
+      title: Database Password
+      type: string
+      maxLength: 255
+      attrs:
+        type: password
+        placeholder: Database Password
+        secret: ${request.name}-db-password
+        if: 'dbtype !== "embedded"'
+    dbname:
+      title: Database Name
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Name
+        if: 'dbtype !== "embedded"'
+    username:
+      title: Flowise Admin Username
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Flowise Admin Username
+    password:
+      title: Flowise Admin Password
+      type: string
+      maxLength: 255
+      attrs:
+        type: password
+        placeholder: Flowise Admin Password
+        secret: ${request.name}-admin-password
+  required:
+    - dbtype

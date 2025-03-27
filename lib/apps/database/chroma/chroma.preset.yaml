@@ -1,0 +1,23 @@
+name: chroma
+displayName: Chroma
+description: Chroma is the open-source embedding database.
+license: Apache 2.0
+author: Chroma Inc.
+homepage: https://www.trychroma.com/
+apps:
+  - chroma
+icon:
+  src: chroma.svg
+  background: transparent
+  scale: 0.9
+  shape: square
+categories:
+  - database
+  - vectordb
+  - ai
+  - gpt
+  - llm
+config:
+  - name: chroma
+    app: chroma
+

@@ -1,0 +1,17 @@
+name: pgvector
+displayName: pgvector
+description: The Open-source vector similarity search for Postgres.
+license: PostgreSQL
+author: The PostgreSQL Global Development Group
+homepage: https://www.postgresql.org/
+apps:
+  - pgvector
+icon:
+  src: pgvector.svg
+  scale: 0.7
+categories:
+  - database
+config:
+  - name: pgvector
+    app: pgvector
+

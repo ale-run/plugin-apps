@@ -1,0 +1,49 @@
+name: weaviate
+displayName: Weaviate
+description: Weaviate is an open source vector database that stores both objects and vectors, allowing for combining vector search with structured filtering with the fault-tolerance and scalability of a cloud-native database, all accessible through GraphQL, REST, and various language clients.
+license: BSD 3.0
+author: Weaviate B.V.
+homepage: https://weaviate.io/
+main: lib/weaviate.js
+versions:
+  - '1.28'
+icon:
+  src: weaviate.svg
+  background: transparent
+  scale: 0.9
+  shape: square
+categories:
+  - database
+  - development
+information:
+  packager: ale
+related:
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    adminemail:
+      title: Weaviate Admin Email
+      type: string
+      maxLength: 255
+      default: user@doe.com
+      attrs:
+        placeholder: Weaviate Admin Email
+    tz:
+      title: Timezone
+      type: string
+      maxLength: 20
+      attrs:
+        type: timezone
+        placeholder: Timezone
+  required:
+    - adminemail

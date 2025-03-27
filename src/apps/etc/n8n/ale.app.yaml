@@ -1,0 +1,48 @@
+name: n8n
+displayName: n8n
+description: n8n is an workflow automation tool for technical people
+license: Fair Code License
+author: n8n
+homepage: https://n8n.io/
+main: lib/n8n.js
+versions:
+  - '1.85'
+  - '1.84'
+icon:
+  src: n8n.svg
+  background: transparent
+  scale: 0.9
+  shape: square
+categories:
+  - devtool
+information:
+  packager: ale
+dependencies:
+related:
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+  required:

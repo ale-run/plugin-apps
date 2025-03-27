@@ -1,0 +1,98 @@
+name: umami
+displayName: Umami
+description: Umami is an open-source, self-hosted web analytics solution.
+license: MIT
+author: Umami Software, Inc.
+homepage: https://umami.is/
+main: lib/umami.js
+versions:
+  - '2.16'
+  - '2.9'
+  - '2.8'
+  - '2.7'
+icon:
+  src: umami.svg
+  background: '#fff'
+  scale: 0.9
+  shape: circle
+categories:
+  - analytics
+information:
+  packager: ale
+dependencies:
+related:
+  - mariadb
+  - postgresql
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+    dbtype:
+      title: Database
+      type: string
+      enum:
+        - postgresql
+        - mysql
+      attrs:
+        placeholder: Select database type
+        labels:
+          - PostgreSQL
+          - MySQL/MariaDB
+    dbhost:
+      title: Database Host
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Host
+    dbport:
+      title: Database Port
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Port
+    dbusername:
+      title: Database Username
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Username
+    dbpassword:
+      title: Database Password
+      type: string
+      maxLength: 255
+      attrs:
+        type: password
+        placeholder: Database Password
+        secret: ${request.name}-db-password
+    database:
+      title: Database Name
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Name
+  required:
+    - dbtype
+    - dbhost
+    - dbport
+    - dbusername
+    - dbpassword
+    - database

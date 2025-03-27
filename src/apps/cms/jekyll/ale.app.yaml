@@ -1,0 +1,91 @@
+name: jekyll
+displayName: Jekyll
+license: MIT
+author: Jekyll Team
+homepage: https://jekyllrb.com/
+main: lib/jekyll.js
+versions:
+  - '4'
+  - '3'
+icon:
+  src: jekyll.svg
+  background: transparent
+  scale: 0.8
+  shape: square
+categories:
+  - cms
+  - blog
+  - frontend
+information:
+  packager: ale
+  rating: 93
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+    docbase:
+      title: Docbase
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Docbase path (default is "_site")
+    nodeversion:
+      title: Embedded node.js
+      type: string
+      enum:
+        - '22'
+        - '21'
+        - '20'
+        - '18'
+        - '16'
+        - '14'
+        - '12'
+        - '10'
+        - '8'
+        - '6'
+        - '4'
+      attrs:
+        placeholder: Select a node.js version
+    npminstall:
+      title: NPM install command
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: NPM install command
+    npmbuild:
+      title: Node build command
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Node build command
+    buildcmd:
+      title: Jekyll build command
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Jekyll build command (default is "jekyll build")
+    npmrc:
+      title: .npmrc
+      type: string
+      attrs:
+        type: textarea
+        rows: 5
+        placeholder: .npmrc file contents
+context:
+  - git
+files:
+  - README.md
+  - jekyll.svg
+  - lib/jekyll.js

@@ -1,0 +1,20 @@
+name: uptime-kuma
+displayName: Uptime Kuma
+description: Uptime Kuma is a self-hosted monitoring tool.
+license: MIT
+author: Louis Lam
+homepage: https://uptime.kuma.pet/
+apps:
+  - uptime-kuma
+icon:
+  src: uptime-kuma.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - monitoring
+config:
+  - name: uptime-kuma
+    app: uptime-kuma@1
+
+

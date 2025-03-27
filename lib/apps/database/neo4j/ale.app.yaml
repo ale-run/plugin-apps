@@ -1,0 +1,60 @@
+name: neo4j
+displayName: Neo4j
+description: Neo4j Graph Database is High-speed graph database with unbounded scale, security, and data integrity for mission-critical intelligent applications.
+license: GPL 3.0
+author: Neo4j Sweden AB
+homepage: https://neo4j.com/
+main: lib/neo4j.js
+versions:
+  - '5.26'
+  - '4.4'
+icon:
+  src: neo4j.svg
+  scale: 1
+categories:
+  - database
+  - graph
+  - development
+information:
+  packager: ale
+related:
+resources:
+  cpu:
+    min: 2
+    initial: 2
+  memory:
+    min: 2
+    initial: 2
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    authentication:
+      title: Use authentication
+      type: boolean
+      default: true
+      attrs:
+        type: switch
+        placeholder: Boolean
+    password:
+      title: Password
+      type: string
+      maxLength: 40
+      attrs:
+        type: password
+        placeholder: Password
+        secret: ${request.name}-user-password
+        message: If no password is specified, it will be automatically generated.
+        immutable: true
+    tz:
+      title: Timezone
+      type: string
+      maxLength: 20
+      attrs:
+        type: timezone
+        placeholder: Timezone
+  required:
+    - authentication
+    - password

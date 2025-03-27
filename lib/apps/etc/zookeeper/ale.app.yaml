@@ -1,0 +1,51 @@
+name: zookeeper
+displayName: Zookeeper
+description: ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
+license: Apache 2.0
+author: The Apache Software Foundation
+homepage: https://zookeeper.apache.org/
+main: lib/zookeeper.js
+versions:
+  - '3.9'
+  - '3.8'
+  - '3.7'
+icon:
+  src: zookeeper.svg
+  background: transparent
+  scale: 0.9
+  shape: square
+categories:
+  - message
+  - queue
+  - devtool
+information:
+  packager: ale
+dependencies:
+related:
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+  required:

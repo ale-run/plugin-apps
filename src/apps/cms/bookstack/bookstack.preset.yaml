@@ -1,0 +1,18 @@
+name: bookstack
+displayName: BookStack
+author: Dan Brown and the BookStack Project contributors
+homepage: https://www.bookstackapp.com/
+apps:
+  - bookstack
+icon:
+  src: bookstack.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - wiki
+config:
+  - name: bookstack
+    app: bookstack@23
+
+

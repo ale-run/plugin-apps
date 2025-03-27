@@ -1,0 +1,30 @@
+name: jupyter-notebook
+displayName: Jupyter Notebook
+description: The Jupyter Notebook is a web-based interactive computing platform.
+main: lib/jupyter-notebook.js
+license: BSD 3.0
+author: Jupyter Development Team, IPython Development Team
+homepage: https://jupyter.org/
+versions:
+  - '7.0.3'
+icon:
+  src: jupyter-notebook.svg
+  background: transparent
+  scale: 0.9
+  shape: square
+categories:
+  - jupyter
+  - devtool
+information:
+  packager: ale
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+  required:

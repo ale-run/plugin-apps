@@ -1,0 +1,75 @@
+name: grafana
+displayName: Grafana
+description: Grafana is a open and composable observability and data visualization platform.
+main: lib/grafana.js
+license: AGPL 3.0
+author: Grafana Labs
+homepage: https://grafana.com/grafana/
+version: '10'
+versions:
+  - '10'
+  - '9'
+  - '8'
+dependencies:
+related:
+icon:
+  src: grafana.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - devtool
+  - monitoring
+information:
+  packager: ale
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 1
+    initial: 1
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+    adminusername:
+      title: Grafana Admin Username
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Grafana Admin Username
+        immutable: true
+    adminpassword:
+      title: Grafana Admin Password
+      type: string
+      maxLength: 255
+      attrs:
+        type: password
+        placeholder: Grafana Admin Password
+        secret: grafana-admin-password
+        immutable: true
+    adminemail:
+      title: Grafana Admin Email
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Grafana Admin Email
+        immutable: true
+  required:
+    - env

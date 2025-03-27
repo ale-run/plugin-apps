@@ -1,0 +1,20 @@
+name: pgadmin
+displayName: pgAdmin
+description: pgAdmin 4 is a web based administration tool for the PostgreSQL database. 
+main: lib/pgadmin.js
+license: PostgreSQL
+author: The pgAdmin Development Team
+homepage: https://www.pgadmin.org/
+apps:
+  - pgadmin
+icon:
+  src: pgadmin.svg
+  background: transparent
+  scale: 0.8
+  shape: square
+categories:
+  - devtool
+config:
+  - name: pgadmin
+    app: pgadmin
+

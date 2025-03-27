@@ -1,0 +1,40 @@
+{
+  "name": "@ale-run/plugin-apps",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "Apache-2.0",
+  "homepage": "https://ale.run",
+  "repository": "ale-run/plugin-apps",
+  "scripts": {
+    "prepublishOnly": "npm run dist",
+    "dev": "npm run dist && cross-env LOG_LEVEL=info aled dev",
+    "build": "tsc",
+    "watch": "npm run dist && tsc -w --preserveWatchOutput",
+    "copy": "copyfiles -u 1 src/**/*.json src/**/*.yaml src/**/*ockerfile* src/**/*.png src/**/*.conf src/**/*.svg src/**/*.js lib",
+    "dist": "rimraf lib && npm run copy && npm run build"
+  },
+  "dependencies": {
+    "ansi-colors": "^4.1.3",
+    "es6-template-string": "^1.2.0"
+  },
+  "devDependencies": {
+    "@ale-run/runtime": "latest",
+    "@types/node": "^22.5.1",
+    "@vercel/ncc": "^0.38.3",
+    "cross-env": "^7.0.2",
+    "concurrently": "^9.1.0",
+    "copyfiles": "^2.4.1",
+    "prettier": "^2.0.4",
+    "typescript": "^5.5.4",
+    "tslint": "^6.1.3",
+    "rimraf": "^3.0.2"
+  },
+  "files": [
+    "lib",
+    "src",
+    "ale.plugin.yaml",
+    "logo.svg",
+    "*.json"
+  ]
+}

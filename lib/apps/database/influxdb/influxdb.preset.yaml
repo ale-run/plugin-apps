@@ -1,0 +1,17 @@
+name: influxdb
+displayName: InfluxDB
+description: InfluxDB는 Go로 작성된 고속의 시계열 데이터베이스입니다
+license: MIT
+author: InfluxData Inc.
+homepage: https://www.influxdata.com/
+apps:
+  - influxdb
+icon:
+  src: influxdb.svg
+  scale: 0.7
+categories:
+  - database
+config:
+  - name: influxdb
+    app: influxdb
+

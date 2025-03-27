@@ -1,0 +1,22 @@
+name: rabbitmq
+displayName: RabbitMQ
+description: RabbitMQ is the most widely deployed open source message broker.
+main: lib/rabbitmq.js
+license: Apache-2.0
+author: VMware, Inc.
+homepage: https://www.rabbitmq.com/
+apps:
+  - rabbitmq
+icon:
+  src: rabbitmq.svg
+  background: transparent
+  scale: 0.8
+  shape: square
+categories:
+  - rabbitmq
+  - messagingqueue
+  - devtool
+config:
+  - name: rabbitmq
+    app: rabbitmq@3.11
+

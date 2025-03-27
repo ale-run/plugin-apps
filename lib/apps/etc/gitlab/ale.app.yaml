@@ -1,0 +1,57 @@
+name: gitlab
+displayName: GitLab
+description: GitLab Inc. is an open-core company that operates GitLab, a DevOps software package which can develop, secure, and operate software.
+main: lib/gitlab.js
+license: MIT
+author: GitLab B.V.
+homepage: https://about.gitlab.com/
+versions:
+  - '17'
+  - '16'
+dependencies:
+related:
+icon:
+  src: gitlab.svg
+  background: transparent
+  scale: 0.9
+  shape: square
+categories:
+  - devtool
+information:
+  packager: ale
+resources:
+  cpu:
+    min: 1
+    initial: 2
+  memory:
+    min: 4
+    initial: 8
+  disk:
+    min: 100
+    initial: 100
+schema:
+  type: object
+  properties:
+    rootpassword:
+      title: Root Password
+      type: string
+      maxLength: 255
+      attrs:
+        type: password
+        placeholder: Root Password
+        secret: ${request.name}-root-password
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+  required:
+    - rootpassword

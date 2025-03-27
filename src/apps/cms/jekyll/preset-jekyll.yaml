@@ -1,0 +1,6 @@
+name: jekyll
+app: jekyll
+options:
+  git:
+    branch: master
+    url: https://github.com/cloudtype/example-jekyll.git

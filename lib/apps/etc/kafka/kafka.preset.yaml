@@ -1,0 +1,22 @@
+name: kafka
+displayName: Apache Kafka
+description: Apache Kafka는 고성능 데이터 파이프라인, 스트리밍 분석, 데이터 통합 등의 기능을 제공하는 오픈소스 분산 이벤트 스트리밍 플랫폼입니다.
+license: Apache-2.0
+author: Apache Software Foundation
+homepage: https://kafka.apache.org/
+apps:
+  - kafka
+icon:
+  src: kafka.svg
+  background: "#fff"
+  scale: 0.9
+  shape: circle
+categories:
+  - message
+  - kafka
+  - queue
+  - devtool
+config:
+  - name: kafka
+    app: kafka
+

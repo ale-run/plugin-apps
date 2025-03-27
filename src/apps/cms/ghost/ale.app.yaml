@@ -1,0 +1,132 @@
+name: ghost
+displayName: Ghost
+license: MIT
+author: Ghost Foundation
+homepage: https://ghost.org/
+main: lib/ghost.js
+versions:
+  - '5'
+  - '4'
+  - '3'
+icon:
+  src: ghost.svg
+  background: rgb(51, 51, 51)
+  forground: '#fff'
+  scale: 0.4
+  shape: circle
+categories:
+  - blog
+  - cms
+information:
+  packager: ale
+dependencies:
+  mariadb: '^10'
+related:
+  - mariadb
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+    dbclient:
+      title: Database
+      type: string
+      enum:
+        - sqlite3
+        - mysql
+      attrs:
+        placeholder: Select database type
+        labels:
+          - Embedded DB
+          - MySQL
+    url:
+      title: Url
+      type: string
+      maxLength: 100
+      attrs:
+        placeholder: Url
+        fill: $url
+    dbhost:
+      title: Database Host
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Host
+    dbuser:
+      title: Database Username
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Username
+    dbpassword:
+      title: Database Password
+      type: string
+      maxLength: 255
+      attrs:
+        type: password
+        placeholder: Database Password
+        secret: ${options.dbhost}-root-password
+    database:
+      title: Database Name
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Name
+    mail_from:
+      title: Reply Mail Address
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Your Name <yourid@email.com>
+    mail_service:
+      title: Mail Service
+      type: string
+      maxLength: 50
+      attrs:
+        placeholder: Enter Your Mail Server Type. Ex) SMTP
+    mail_host:
+      title: Mail Server Host
+      type: string
+      maxLength: 100
+      attrs:
+        placeholder: Enter Your Mail Server Port. Ex) smtp.gmail.com
+    mail_port:
+      title: Mail Server Port
+      type: number
+      attrs:
+        placeholder: Enter Your Mail Server Port. Ex) 587
+    mail_user:
+      title: Mail Server Username
+      type: string
+      maxLength: 100
+      attrs:
+        placeholder: Enter Your Mail Server Username
+    mail_password:
+      title: Mail Server Password
+      type: string
+      maxLength: 100
+      attrs:
+        placeholder: Enter Your Mail Server Password
+  required:
+    - env

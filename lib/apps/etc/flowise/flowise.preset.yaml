@@ -1,0 +1,24 @@
+name: flowise
+displayName: Flowise
+description: Flowise is a low-code/no-code drag & drop tool with the aim to make it easy for people to visualize and build LLM apps.
+license: Apache 2.0
+author: FlowiseAI
+homepage: https://flowiseai.com/
+apps:
+  - flowise
+icon:
+  src: flowise.svg
+  background: transparent
+  scale: 1
+  shape: square
+categories:
+  - devtool
+  - ai
+  - llm
+  - gpt
+  - langchain
+config:
+  - name: flowise
+    app: flowise@2.0
+
+

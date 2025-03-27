@@ -1,0 +1,20 @@
+name: gitea
+displayName: Gitea
+description: Gitea is a lightweight DevOps platform.
+main: lib/gitea.js
+license: MIT
+author: Gitea
+homepage: https://about.gitea.com/
+apps:
+  - gitea
+icon:
+  src: gitea.svg
+  background: transparent
+  scale: 0.8
+  shape: square
+categories:
+  - devtool
+config:
+  - name: gitea
+    app: gitea
+

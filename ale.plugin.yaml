@@ -1,0 +1,14 @@
+name: '@ale-run/plugin-apps'
+version: '0.1.0'
+displayName: Ale Apps
+description: Ale Plugin - Apps
+license: Ale License
+author: ale
+homepage: https://ale.run
+repository: ale-run/plugin-apps
+main: lib/index.js
+icon:
+  src: logo.svg
+  background: transparent
+  scale: 1
+  shape: square

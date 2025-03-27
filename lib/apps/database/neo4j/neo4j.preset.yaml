@@ -1,0 +1,17 @@
+name: neo4j
+displayName: Neo4j
+description: Neo4j Graph Database is High-speed graph database with unbounded scale, security, and data integrity for mission-critical intelligent applications.
+license: GPL 3.0
+author: Neo4j Sweden AB
+homepage: https://neo4j.com/
+apps:
+  - neo4j
+icon:
+  src: neo4j.svg
+  scale: 1
+categories:
+  - database
+config:
+  - name: neo4j
+    app: neo4j
+

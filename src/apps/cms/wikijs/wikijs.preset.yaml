@@ -1,0 +1,19 @@
+name: wikijs
+displayName: Wiki.js
+license: GPL 3.0
+author: requarks.io
+homepage: https://js.wiki/
+apps:
+  - wikijs
+icon:
+  src: wikijs.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - wiki
+config:
+  - name: wikijs
+    app: wikijs@2
+
+

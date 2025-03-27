@@ -1,0 +1,43 @@
+name: chroma
+displayName: Chroma
+description: Chroma is the open-source embedding database.
+license: Apache 2.0
+author: Chroma Inc.
+homepage: https://www.trychroma.com/
+main: lib/chroma.js
+versions:
+  - '0.6'
+  - '0.5'
+  - '0.4'
+icon:
+  src: chroma.svg
+  background: transparent
+  scale: 0.9
+  shape: square
+categories:
+  - database
+  - development
+information:
+  packager: ale
+related:
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    tz:
+      title: Timezone
+      type: string
+      maxLength: 20
+      attrs:
+        type: timezone
+        placeholder: Timezone
+  required:

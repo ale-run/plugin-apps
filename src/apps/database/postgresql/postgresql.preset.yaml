@@ -1,0 +1,14 @@
+name: postgresql
+displayName: PostgreSQL
+description: PostgreSQL 은 안정성과 데이터 무결성을 제공하는 관계형 데이터베이스 시스템입니다.
+license: MIT
+author: The PostgreSQL Global Development Group
+homepage: https://www.postgresql.org/
+apps:
+  - postgresql
+categories:
+  - database
+config:
+  - name: postgresql
+    app: postgresql
+

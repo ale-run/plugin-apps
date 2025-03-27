@@ -1,0 +1,90 @@
+name: gitea
+displayName: Gitea
+description: Gitea is a lightweight DevOps platform.
+main: lib/gitea.js
+license: MIT
+author: Gitea
+homepage: https://about.gitea.com/
+versions:
+  - '1.23'
+  - '1.22'
+  - '1.21'
+  - '1.20'
+dependencies:
+  mariadb: '^10'
+related:
+  - mariadb
+icon:
+  src: gitea.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - devtool
+information:
+  packager: ale
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+    dbclient:
+      title: Database
+      type: string
+      enum:
+        - mysql
+        - postgresql
+      attrs:
+        placeholder: Select database type
+        labels:
+          - MariaDB/MySQL
+          - PostgreSQL
+    dbhost:
+      title: Database Host
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Host
+    dbuser:
+      title: Database Username
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Username
+    dbpassword:
+      title: Database Password
+      type: string
+      maxLength: 255
+      attrs:
+        type: password
+        placeholder: Database Password
+        secret: ${options.dbhost}-root-password
+    database:
+      title: Database Name
+      type: string
+      maxLength: 255
+      attrs:
+        placeholder: Database Name
+  required:
+    - env

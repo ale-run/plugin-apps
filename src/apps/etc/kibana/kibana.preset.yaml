@@ -1,0 +1,25 @@
+name: kibana
+displayName: Kibana
+description: Kibana is your window into the Elastic Stack. Specifically, it's a browser-based analytics and search dashboard for Elasticsearch.
+license: Apache-2.0
+author: Elastic NV
+homepage: https://www.elastic.co/
+apps:
+  - kibana
+icon:
+  src: kibana.svg
+  background: transparent
+  scale: 0.9
+  shape: circle
+categories:
+  - elastic
+  - devtool
+config:
+  - name: kibana
+    app: kibana
+    options:
+      config: |
+        server.host: 0.0.0.0
+        elasticsearch:
+          hosts: http://elasticsearch:9200
+

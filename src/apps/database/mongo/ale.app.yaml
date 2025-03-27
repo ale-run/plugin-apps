@@ -1,0 +1,80 @@
+name: mongo
+displayName: MongoDB
+description: MongoDB is a cross-platform document-oriented database.
+license: AGPL
+author: MongoDB Inc
+homepage: https://www.mongodb.com/
+main: lib/mongo.js
+versions:
+  - '4.0'
+  - '3.6'
+icon:
+  src: mongo.svg
+  scale: 0.7
+categories:
+  - database
+  - nosql
+  - development
+information:
+  packager: ale.run
+related:
+  - node
+  - postgresql
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    authentication:
+      title: Use authentication
+      type: boolean
+      default: true
+      attrs:
+        type: switch
+        placeholder: Boolean
+    rootusername:
+      title: Root Username
+      type: string
+      default: admin
+      maxLength: 40
+      attrs:
+        type: text
+        placeholder: Root Username
+        immutable: true
+    rootpassword:
+      title: Root Password
+      type: string
+      maxLength: 40
+      attrs:
+        type: password
+        placeholder: Root Password
+        secret: ${name}-root-password
+        message: If no password is specified, it will be automatically generated.
+        immutable: true
+    directoryperdb:
+      title: Directory per DB
+      type: boolean
+      default: true
+      attrs:
+        type: switch
+        placeholder: Boolean
+        immutable: true
+    tz:
+      title: Timezone
+      type: string
+      maxLength: 20
+      attrs:
+        type: timezone
+        placeholder: Timezone
+  required:
+    - authentication
+    - rootusername
+    - rootpassword

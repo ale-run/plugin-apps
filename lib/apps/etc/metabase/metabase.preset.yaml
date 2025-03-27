@@ -1,0 +1,20 @@
+name: metabase
+displayName: Metabase
+description: Metabase is an open-source business intelligence platform.
+license: GPL 3.0
+author: Metabase, Inc.
+homepage: https://www.metabase.com/
+apps:
+  - metabase
+icon:
+  src: metabase.svg
+  background: transparent
+  scale: 0.9
+  shape: square
+categories:
+  - metabase
+config:
+  - name: metabase
+    app: metabase@0.47
+
+

@@ -1,0 +1,62 @@
+name: couchdb
+displayName: CouchDB
+description: CouchDB is a Seamless multi-master syncing database with an intuitive HTTP/JSON API, designed for reliability.
+license: Apache 2.0
+author: The Apache Software Foundation
+homepage: https://couchdb.apache.org/
+main: lib/couchdb.js
+versions:
+  - '3'
+  - '2'
+icon:
+  src: couchdb.svg
+  scale: 0.7
+categories:
+  - database
+  - nosql
+  - development
+information:
+  packager: ale
+related:
+  - node
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+  disk:
+    min: 1
+    initial: 1
+schema:
+  type: object
+  properties:
+    username:
+      title: Username
+      type: string
+      maxLength: 40
+      attrs:
+        type: text
+        placeholder: Username
+        immutable: true
+    password:
+      title: Password
+      type: string
+      maxLength: 40
+      attrs:
+        type: password
+        placeholder: Password
+        secret: ${name}-user-password
+        message: If no password is specified, it will be automatically generated.
+        immutable: true
+    tz:
+      title: Timezone
+      type: string
+      maxLength: 20
+      attrs:
+        type: timezone
+        placeholder: Timezone
+  required:
+    - username
+    - password

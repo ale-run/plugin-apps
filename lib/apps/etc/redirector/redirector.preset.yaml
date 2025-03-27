@@ -1,0 +1,23 @@
+name: redirector
+displayName: Redirector
+description: URL 리디렉션
+license: MIT
+author: cloudtype
+apps:
+  - redirector
+icon:
+  src: redirector.svg
+  background: "#000000"
+  scale: 0.7
+  shape: circle
+categories:
+  - web
+  - redirection
+  - development
+  - devtool
+config:
+  - name: redirector
+    app: redirector
+    options:
+      redirect: https://google.com
+

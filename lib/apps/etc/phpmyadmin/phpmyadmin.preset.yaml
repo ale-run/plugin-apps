@@ -1,0 +1,20 @@
+name: phpmyadmin
+displayName: phpMyAdmin
+description: phpMyAdmin is a web interface for MySQL and MariaDB.
+main: lib/phpmyadmin.js
+license: PostgreSQL
+author: Free Software Foundation, Inc.
+homepage: https://www.phpmyadmin.net/
+apps:
+  - phpmyadmin
+icon:
+  src: phpmyadmin.svg
+  background: transparent
+  scale: 0.8
+  shape: square
+categories:
+  - devtool
+config:
+  - name: phpmyadmin
+    app: phpmyadmin
+
