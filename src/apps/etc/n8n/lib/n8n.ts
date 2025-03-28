@@ -3,8 +3,8 @@ import { ClusterAppController, Logger, ROUTE_TYPE } from '@ale-run/runtime';
 const logger = Logger.getLogger('app:n8n');
 
 const versions = {
-  '1.85': '1.85',
-  '1.84': '1.84'
+  '1.85': '1.85.4',
+  '1.84': '1.84.3'
 };
 
 export default class N8nController extends ClusterAppController {

@@ -44,7 +44,7 @@ export default class JekyllController extends ClusterAppController {
       docbase
     });
 
-    const result: any = await this.build({
+    const result: BuildResult = await this.build({
       repository: git,
       dockerfile: {
         text: dockerfile
