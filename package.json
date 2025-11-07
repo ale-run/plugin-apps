@@ -19,7 +19,7 @@
     "es6-template-string": "^1.2.0"
   },
   "devDependencies": {
-    "@ale-run/runtime": "^0.1.0-rc.0",
+    "@ale-run/runtime": "^0.1.0-rc.18",
     "@types/node": "^22.5.1",
     "@vercel/ncc": "^0.38.3",
     "concurrently": "^9.1.0",

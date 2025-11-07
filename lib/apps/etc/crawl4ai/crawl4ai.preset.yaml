@@ -1,0 +1,26 @@
+name: crawl4ai
+displayName: Crawl4AI
+description: Open-Source LLM-Friendly Web Crawler & Scraper
+license: Apache-2.0
+author: UncleCode
+homepage: https://crawl4ai.com/
+apps:
+  - crawl4ai
+categories:
+  - ai
+  - crawler
+config:
+  - name: crawl4ai
+    app: crawl4ai
+    options:
+      env:
+        - name: OPENAI_API_KEY
+          value: ''
+        - name: ANTHROPIC_API_KEY
+          value: ''
+        - name: LLM_PROVIDER
+          value: openai/gpt-4.1-mini
+        - name: LLM_TEMPERATURE
+          value: '0.7'
+        - name: LLM_BASE_URL
+          value: ''

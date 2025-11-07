@@ -6,6 +6,7 @@ author: Redis Labs
 homepage: https://redis.io/
 main: lib/redis.js
 versions:
+  - '8'
   - '7'
   - '6'
   - '5'
@@ -50,6 +51,19 @@ schema:
       attrs:
         type: switch
         placeholder: Use authentication
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
     password:
       title: Password
       type: string
@@ -58,6 +72,7 @@ schema:
         type: password
         placeholder: Password
         secret: ${name}-password
+        if: 'auth === true'
     disable_flushdb:
       title: Disable FLUSHDB command
       type: boolean
