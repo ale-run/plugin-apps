@@ -3,6 +3,7 @@ import { ClusterAppController, Logger, ROUTE_TYPE } from '@ale-run/runtime';
 const logger = Logger.getLogger('app:redis');
 
 const versions = {
+  8: '8.2',
   7: '7.4',
   6: '6.2',
   5: '5.0'
@@ -68,7 +69,7 @@ export default class RedisController extends ClusterAppController {
         containers: [
           {
             name: 'redis',
-            image: `bitnami/redis:${version}`,
+            image: `bitnamilegacy/redis:${version}`,
             env: [
               options.auth === true
                 ? {

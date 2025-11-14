@@ -1,0 +1,46 @@
+name: crawl4ai
+displayName: Crawl4AI
+description: Open-Source LLM-Friendly Web Crawler & Scraper
+license: Apache-2.0
+author: UncleCode
+homepage: https://crawl4ai.com/
+main: lib/crawl4ai.js
+versions:
+  - 0.6.0rc1-r2
+version: 0.6.0rc1-r2
+icon:
+  src: crawl4ai.png
+  scale: 1
+  shape: square
+categories:
+  - ai
+  - crawler
+information:
+  packager: ale.run
+  boxBackground: '#3a3a3a'
+  boxForeground: '#fff'
+resources:
+  cpu:
+    min: 0
+    initial: 0
+  memory:
+    min: 0.5
+    initial: 0.5
+schema:
+  type: object
+  properties:
+    env:
+      title: Environment variables
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      additionalProperties: true
+      attrs:
+        type: env
+  required:
+    - env
