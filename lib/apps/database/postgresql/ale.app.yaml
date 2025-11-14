@@ -6,6 +6,7 @@ author: The PostgreSQL Global Development Group
 homepage: https://www.postgresql.org/
 main: lib/postgresql.js
 versions:
+  - '18'
   - '17'
   - '16'
   - '15'
